@@ -6,102 +6,102 @@
     <meta name="description" content="Sathvik Tummala - AI Engineer & Researcher Portfolio">
     <title>Sathvik Tummala - AI Engineer</title>
     
-    <!-- Google Fonts -->
+    <!-- Preconnect for faster font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS Reset */
+        /* Critical CSS - Inline for fastest initial paint */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* CSS Variables */
         :root {
-            --black: #000000;
-            --white: #ffffff;
+            --black: #000;
+            --white: #fff;
             --gray-100: #f7f7f7;
             --gray-200: #e5e5e5;
             --gray-300: #d4d4d4;
-            --gray-400: #a3a3a3;
             --gray-500: #737373;
             --gray-600: #525252;
             --gray-700: #404040;
-            --gray-800: #262626;
             --gray-900: #171717;
-            
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             --max-width: 1200px;
             --section-padding: 5rem;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         /* Base Styles */
         html {
             scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-            font-family: var(--font-sans);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             color: var(--black);
-            background-color: var(--white);
+            background: var(--white);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         /* Typography */
-        h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
+        h1 { 
+            font-size: clamp(2.5rem, 5vw, 4rem); 
+            font-weight: 700; 
             line-height: 1.1;
             letter-spacing: -0.02em;
         }
-
-        h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 600;
-            line-height: 1.2;
-            letter-spacing: -0.01em;
+        
+        h2 { 
+            font-size: clamp(2rem, 4vw, 3rem); 
+            font-weight: 600; 
             margin-bottom: 3rem;
+            letter-spacing: -0.01em;
         }
-
-        h3 {
-            font-size: clamp(1.25rem, 3vw, 1.5rem);
-            font-weight: 600;
+        
+        h3 { 
+            font-size: clamp(1.25rem, 3vw, 1.5rem); 
+            font-weight: 600; 
             margin-bottom: 1rem;
         }
-
-        p {
-            font-size: 1.125rem;
-            line-height: 1.7;
+        
+        p { 
+            font-size: 1.125rem; 
+            line-height: 1.7; 
             color: var(--gray-700);
         }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: all 0.3s ease;
+        
+        a { 
+            color: inherit; 
+            text-decoration: none; 
+            transition: var(--transition);
         }
 
-        /* Container */
+        /* Layout */
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
             padding: 0 2rem;
+            contain: layout style;
         }
 
-        /* Navigation */
+        /* Navigation - Optimized */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            will-change: transform;
         }
 
         nav.scrolled {
@@ -120,7 +120,6 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            letter-spacing: -0.02em;
         }
 
         .nav-links {
@@ -129,19 +128,19 @@
             list-style: none;
         }
 
-        .nav-links a {
+        .nav-link {
             font-size: 0.95rem;
             font-weight: 500;
             color: var(--gray-600);
             position: relative;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
+        .nav-link:hover,
+        .nav-link.active {
             color: var(--black);
         }
 
-        .nav-links a::after {
+        .nav-link::after {
             content: '';
             position: absolute;
             bottom: -5px;
@@ -149,15 +148,15 @@
             width: 0;
             height: 2px;
             background: var(--black);
-            transition: width 0.3s ease;
+            transition: width var(--transition);
         }
 
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
+        .nav-link:hover::after,
+        .nav-link.active::after {
             width: 100%;
         }
 
-        /* Mobile Menu Toggle */
+        /* Mobile Menu */
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -170,25 +169,13 @@
             width: 25px;
             height: 2px;
             background: var(--black);
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         /* Sections */
         section {
             padding: var(--section-padding) 0;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        section:nth-child(odd) {
-            background: var(--white);
+            contain: layout style;
         }
 
         section:nth-child(even) {
@@ -207,18 +194,6 @@
 
         .hero-content {
             text-align: center;
-            animation: fadeIn 1s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .subtitle {
@@ -226,6 +201,7 @@
             color: var(--gray-600);
             margin-top: 1rem;
             font-weight: 400;
+            min-height: 1.5em;
         }
 
         .hero-links {
@@ -241,8 +217,9 @@
             border: 2px solid var(--black);
             border-radius: 50px;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             display: inline-block;
+            will-change: transform;
         }
 
         .btn-primary {
@@ -253,6 +230,7 @@
         .btn-primary:hover {
             background: var(--white);
             color: var(--black);
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
@@ -263,6 +241,7 @@
         .btn-secondary:hover {
             background: var(--black);
             color: var(--white);
+            transform: translateY(-2px);
         }
 
         /* About Section */
@@ -277,7 +256,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Skills Section */
+        /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -303,7 +282,7 @@
             border: 1px solid var(--gray-300);
             border-radius: 25px;
             font-size: 0.9rem;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         .skill-tag:hover {
@@ -313,7 +292,7 @@
             transform: translateY(-2px);
         }
 
-        /* Projects Section */
+        /* Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -326,17 +305,13 @@
             border: 1px solid var(--gray-200);
             border-radius: 8px;
             padding: 2rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            transition: var(--transition);
+            will-change: transform;
         }
 
         .project-card:hover {
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transform: translateY(-5px);
-        }
-
-        .project-card h3 {
-            margin-bottom: 1rem;
         }
 
         .project-card p {
@@ -354,7 +329,7 @@
             border: 1px solid var(--black);
             border-radius: 4px;
             font-size: 0.875rem;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         .project-link:hover {
@@ -362,7 +337,7 @@
             color: var(--white);
         }
 
-        /* Experience Section - Timeline */
+        /* Timeline */
         .timeline {
             position: relative;
             max-width: 900px;
@@ -383,8 +358,6 @@
             position: relative;
             padding: 2rem 0;
             width: 50%;
-            opacity: 0;
-            animation: fadeInTimeline 0.8s ease forwards;
         }
 
         .timeline-item:nth-child(odd) {
@@ -396,13 +369,6 @@
         .timeline-item:nth-child(even) {
             left: 50%;
             padding-left: 3rem;
-        }
-
-        @keyframes fadeInTimeline {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .timeline-content {
@@ -438,10 +404,6 @@
             margin-bottom: 0.5rem;
         }
 
-        .timeline-content h3 {
-            margin-bottom: 0.5rem;
-        }
-
         .timeline-content h4 {
             font-size: 1rem;
             color: var(--gray-600);
@@ -468,7 +430,7 @@
             left: 0;
         }
 
-        /* Education Section */
+        /* Education */
         .education-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -481,15 +443,11 @@
             padding: 2rem;
             border-radius: 8px;
             border: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         .education-card:hover {
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .education-card h3 {
-            margin-bottom: 0.5rem;
         }
 
         .education-card .degree {
@@ -509,7 +467,7 @@
             color: var(--black);
         }
 
-        /* Contact Section */
+        /* Contact */
         #contact {
             background: var(--black);
             color: var(--white);
@@ -520,6 +478,10 @@
             text-align: center;
         }
 
+        #contact p {
+            color: var(--white);
+        }
+
         .contact-content {
             max-width: 600px;
             margin: 0 auto;
@@ -528,16 +490,18 @@
 
         .contact-info {
             margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
         }
 
         .contact-info a {
-            display: inline-block;
-            margin: 0.5rem;
             padding: 0.75rem 1.5rem;
             border: 2px solid var(--white);
             border-radius: 50px;
             color: var(--white);
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         .contact-info a:hover {
@@ -548,12 +512,26 @@
         /* Footer */
         footer {
             background: var(--gray-900);
-            color: var(--gray-400);
+            color: var(--gray-500);
             text-align: center;
             padding: 2rem;
         }
 
-        /* Responsive Design */
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             :root {
                 --section-padding: 3rem;
@@ -569,7 +547,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                transition: left 0.3s ease;
+                transition: left var(--transition);
             }
 
             .nav-links.active {
@@ -608,85 +586,31 @@
                 left: 0;
             }
 
-            .timeline-item::after {
-                left: 22px;
-            }
-
+            .timeline-item::after,
             .timeline-item:nth-child(odd)::after {
                 left: 22px;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
+            .projects-grid,
             .skills-grid {
                 grid-template-columns: 1fr;
             }
 
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
         }
 
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Loading animation */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-
-        .loader.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .loader-circle {
-            width: 50px;
-            height: 50px;
-            border: 3px solid var(--gray-200);
-            border-top-color: var(--black);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
+        /* Performance optimizations */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Loader -->
-    <div class="loader" id="loader">
-        <div class="loader-circle"></div>
-    </div>
-
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
@@ -804,7 +728,7 @@
                         Implemented user-centered design principles with confidence visualization and feedback capture.
                     </p>
                     <div class="project-links">
-                        <a href="https://github.com/sathvik213" target="_blank" class="project-link">GitHub</a>
+                        <a href="https://github.com/sathvik213" target="_blank" rel="noopener" class="project-link">GitHub</a>
                         <a href="#" class="project-link">Live Demo</a>
                     </div>
                 </div>
@@ -822,7 +746,7 @@
                     <h3>Rover Motion Prediction</h3>
                     <p>
                         Developed ML project using Random Forest algorithms to predict rover motion patterns.
-                        Won first place at Mahendra Tech University's Data Challenge hackathon.
+                        Won first place at Mahindra Tech University's Data Challenge hackathon.
                     </p>
                     <div class="project-links">
                         <a href="#" class="project-link">View Project</a>
@@ -839,7 +763,7 @@
             <div class="timeline">
                 <div class="timeline-item fade-in">
                     <div class="timeline-content">
-                        <div class="timeline-date">August 2025 - Present</div>
+                        <div class="timeline-date">September 2024 - Present</div>
                         <h3>Khoury Research Apprenticeship</h3>
                         <h4>Under Professor Mahsan Nourani</h4>
                         <ul>
@@ -851,7 +775,7 @@
                 </div>
                 <div class="timeline-item fade-in">
                     <div class="timeline-content">
-                        <div class="timeline-date">August 2025 - Present</div>
+                        <div class="timeline-date">September 2024 - Present</div>
                         <h3>Teaching Assistant</h3>
                         <h4>Data Mining & Machine Learning</h4>
                         <ul>
@@ -885,7 +809,7 @@
                 <div class="education-card fade-in">
                     <h3>Northeastern University</h3>
                     <p class="degree">Master of Science in Artificial Intelligence</p>
-                    <p class="date">2025 - Present</p>
+                    <p class="date">2024 - Present</p>
                     <p class="gpa">GPA: 3.8/4.0</p>
                 </div>
                 <div class="education-card fade-in">
@@ -906,8 +830,8 @@
                 <p>I'm always excited to collaborate on innovative AI projects and research opportunities.</p>
                 <div class="contact-info">
                     <a href="mailto:sathvik.t@northeastern.edu">Email</a>
-                    <a href="https://linkedin.com/in/sathvik-tummala" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/sathvik213" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/sathvik-tummala" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/sathvik213" target="_blank" rel="noopener">GitHub</a>
                     <a href="tel:+12073310366">Call</a>
                 </div>
             </div>
@@ -922,155 +846,154 @@
     </footer>
 
     <script>
-        // Loader - Hide after page loads
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loader').classList.add('hidden');
-            }, 500);
-        });
+        // Optimized JavaScript with debouncing and performance improvements
+        (function() {
+            'use strict';
 
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
+            // Cache DOM elements
+            const navbar = document.getElementById('navbar');
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            const navItems = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            const fadeElements = document.querySelectorAll('.fade-in');
 
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Close mobile menu when link is clicked
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Smooth Scrolling & Active Navigation
-        const sections = document.querySelectorAll('section');
-        const navItems = document.querySelectorAll('.nav-link');
-
-        // Update active navigation on scroll
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navItems.forEach(item => {
-                item.classList.remove('active');
-                if (item.getAttribute('href').slice(1) === current) {
-                    item.classList.add('active');
-                }
-            });
-        });
-
-        // Navbar scroll effect - Add shadow when scrolled
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Fade in animation on scroll using Intersection Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Parallax effect for hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero-content');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-                hero.style.opacity = 1 - (scrolled * 0.002);
-            }
-        });
-
-        // Typing effect for subtitle
-        const subtitle = document.querySelector('.subtitle');
-        if (subtitle) {
-            const text = subtitle.textContent;
-            subtitle.textContent = '';
-            let index = 0;
-
-            function typeWriter() {
-                if (index < text.length) {
-                    subtitle.textContent += text.charAt(index);
-                    index++;
-                    setTimeout(typeWriter, 50);
-                }
+            // Utility function for debouncing
+            function debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
             }
 
-            // Start typing effect after loader
-            setTimeout(typeWriter, 1000);
-        }
+            // Mobile menu toggle
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
 
-        // Project card hover effect - Track mouse position
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function(e) {
-                const rect = this.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
+            // Close mobile menu on link click
+            navLinks.addEventListener('click', (e) => {
+                if (e.target.classList.contains('nav-link')) {
+                    menuToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+
+            // Optimized scroll handler
+            const handleScroll = debounce(() => {
+                // Navbar shadow
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+
+                // Active navigation
+                let current = '';
+                const scrollPosition = window.scrollY + 200;
                 
-                this.style.setProperty('--mouse-x', `${x}px`);
-                this.style.setProperty('--mouse-y', `${y}px`);
-            });
-        });
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
 
-        // Smooth scroll for all anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href').slice(1) === current) {
+                        item.classList.add('active');
+                    }
+                });
+            }, 10);
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = '0.1s';
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            fadeElements.forEach(el => observer.observe(el));
+
+            // Typing effect for subtitle (optimized)
+            const subtitle = document.querySelector('.subtitle');
+            if (subtitle) {
+                const text = subtitle.textContent;
+                subtitle.textContent = '';
+                subtitle.style.minHeight = '1.5em';
+                
+                let index = 0;
+                function typeWriter() {
+                    if (index < text.length) {
+                        subtitle.textContent += text.charAt(index);
+                        index++;
+                        requestAnimationFrame(() => {
+                            setTimeout(typeWriter, 50);
+                        });
+                    }
+                }
+                
+                requestAnimationFrame(() => {
+                    setTimeout(typeWriter, 500);
+                });
+            }
+
+            // Smooth scroll for anchor links
+            document.addEventListener('click', (e) => {
+                if (e.target.matches('a[href^="#"]')) {
+                    e.preventDefault();
+                    const targetId = e.target.getAttribute('href').slice(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             });
-        });
 
-        // Add stagger animation to timeline items
-        const timelineItems = document.querySelectorAll('.timeline-item');
-        timelineItems.forEach((item, index) => {
-            item.style.animationDelay = `${index * 0.2}s`;
-        });
+            // Stagger animations for timeline and skills
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const skillCategories = document.querySelectorAll('.skill-category');
+            
+            timelineItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.15}s`;
+            });
+            
+            skillCategories.forEach((category, index) => {
+                category.style.animationDelay = `${index * 0.1}s`;
+            });
 
-        // Add stagger animation to skill categories
-        const skillCategories = document.querySelectorAll('.skill-category');
-        skillCategories.forEach((category, index) => {
-            category.style.animationDelay = `${index * 0.1}s`;
-        });
-
-        // Dynamic footer year
-        const footerYear = new Date().getFullYear();
-        const footer = document.querySelector('footer p');
-        if (footer) {
-            footer.innerHTML = `&copy; ${footerYear} Sathvik Tummala. All rights reserved.`;
-        }
+            // Initialize on DOM ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', handleScroll);
+            } else {
+                handleScroll();
+            }
+        })();
     </script>
 </body>
 </html>
