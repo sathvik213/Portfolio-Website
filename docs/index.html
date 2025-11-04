@@ -1,4 +1,261 @@
-// Loader - Hide after page loads
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sathvik Tummala ">
+    <title>Sathvik Tummala</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">ST</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">Sathvik Tummala</h1>
+                <p class="subtitle fade-in">AI Engineer • Researcher • Full-Stack Developer</p>
+                <div class="hero-links fade-in">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="fade-in">About Me</h2>
+            <div class="about-content fade-in">
+                <p>
+                    I am a passionate AI Engineer pursuing my Master's in Artificial Intelligence at Northeastern University.
+                    With a strong foundation in machine learning, full-stack development, and human-computer interaction,
+                    I thrive at the intersection of cutting-edge technology and user-centered design.
+                </p>
+                <p>
+                    Currently working as a Research Apprentice under Professor Mahsan Nourani, I'm developing innovative
+                    HCI solutions that leverage LLMs to enhance user interaction. My journey spans from backend development
+                    at startups to teaching machine learning concepts, always with a focus on creating impactful, 
+                    accessible technology.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="fade-in">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Frameworks & Libraries</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">ExpressJS</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Databases</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Sequelize ORM</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">VSCode</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Firebase</span>
+                        <span class="skill-tag">Streamlit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="fade-in">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <h3>Adaptive AI Trust Simulator</h3>
+                    <p>
+                        Designed an adaptive AI system to study user trust patterns and calibration with non-deterministic systems.
+                        Implemented user-centered design principles with confidence visualization and feedback capture.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/sathvik213" target="_blank" class="project-link">GitHub</a>
+                        <a href="#" class="project-link">Live Demo</a>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <h3>Pollution Management System</h3>
+                    <p>
+                        Led time series pollution analysis using Java, Python, and R. Integrated MQTT for real-time data
+                        acquisition and implemented ARIMA models for advanced trend forecasting.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <h3>Rover Motion Prediction</h3>
+                    <p>
+                        Developed ML project using Random Forest algorithms to predict rover motion patterns.
+                        Won first place at Mahendra Tech University's Data Challenge hackathon.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="fade-in">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">August 2025 - Present</div>
+                        <h3>Khoury Research Apprenticeship</h3>
+                        <h4>Under Professor Mahsan Nourani</h4>
+                        <ul>
+                            <li>Developing HCI-focused solution using Streamlit and Firebase with LLM integration</li>
+                            <li>Selected through competitive faculty-nominated process</li>
+                            <li>Conducting human-centered user studies for AI-powered systems</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">August 2025 - Present</div>
+                        <h3>Teaching Assistant</h3>
+                        <h4>Data Mining & Machine Learning</h4>
+                        <ul>
+                            <li>Conducting regular office hours for ML algorithms and mathematical concepts</li>
+                            <li>Grading assignments and providing timely feedback</li>
+                            <li>Supporting student understanding and engagement</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">February 2024 - August 2024</div>
+                        <h3>Kernn Automations</h3>
+                        <h4>Backend Developer & Chief Operations Officer</h4>
+                        <ul>
+                            <li>Designed optimized database schemas using Sequelize</li>
+                            <li>Developed and tested APIs with Node.js and Express.js</li>
+                            <li>Led startup operations including hiring and team management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="fade-in">Education</h2>
+            <div class="education-grid">
+                <div class="education-card fade-in">
+                    <h3>Northeastern University</h3>
+                    <p class="degree">Master of Science in Artificial Intelligence</p>
+                    <p class="date">2025 - Present</p>
+                    <p class="gpa">GPA: 3.8/4.0</p>
+                </div>
+                <div class="education-card fade-in">
+                    <h3>Malla Reddy University</h3>
+                    <p class="degree">Bachelor of Technology in Artificial Intelligence</p>
+                    <p class="date">2020 - 2024</p>
+                    <p class="gpa">GPA: 8.47/10.0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="fade-in">Let's Connect</h2>
+            <div class="contact-content fade-in">
+                <p>I'm always excited to collaborate on innovative AI projects and research opportunities.</p>
+                <div class="contact-info">
+                    <a href="mailto:sathvik.t@northeastern.edu">Email</a>
+                    <a href="https://linkedin.com/in/sathvik-tummala" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/sathvik213" target="_blank">GitHub</a>
+                    <a href="tel:+12073310366">Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sathvik Tummala. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js">// Loader - Hide after page loads
 window.addEventListener('load', () => {
     setTimeout(() => {
         document.getElementById('loader').classList.add('hidden');
@@ -146,4 +403,6 @@ const footerYear = new Date().getFullYear();
 const footer = document.querySelector('footer p');
 if (footer) {
     footer.innerHTML = `&copy; ${footerYear} Sathvik Tummala. All rights reserved.`;
-}
+}</script>
+</body>
+</html>
